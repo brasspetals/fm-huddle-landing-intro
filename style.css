@@ -1,0 +1,236 @@
+:root {
+    --color-primary: rgb(103, 75, 175);
+    --color-secondary: rgb(255, 82, 191);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*, 
+*::before, 
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; 
+    /* if default browser font is 16px, this sets it to 10px (1rem = 10px) */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+    color: #fff;
+    background-color: var(--color-primary);
+}
+
+.container {
+    height: 100vh;
+    background-color: var(--color-primary);
+    background-image:url("./images/bg-desktop.svg");
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5.5rem 7rem 4rem 7rem;   
+}
+
+.logo img {
+    height: 53px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    margin-left: 4px;
+}
+
+.main-graphic {
+    flex: 1 0 54.5%;
+}
+
+.main-graphic img {
+    width: 100%;
+}
+
+.main-content {
+    padding: 4rem 2rem;
+    margin-left: 3.4rem;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.main-content p {
+    opacity: 0.8;
+    line-height: 1.5;
+    margin-bottom: 2.5rem;
+}
+
+button {
+    background-color: #fff;
+    color: rgba(103, 75, 175, 0.8);
+    font-size: 1.8rem;
+    letter-spacing: .5px;
+    padding: 1.7rem 6.4rem;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+    transition: all .2s;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: translateY(-.25rem);
+    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0rem);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 1.5rem;
+}
+
+.icon {
+    border: 1px solid #fff;
+    border-radius: 50%;;
+    padding: 1rem;
+    display: flex;
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.icon:hover {
+    background-color: rgba(255, 82, 192, 0.7);
+}
+
+.icon:not(:last-of-type) {
+    margin-right: 1.5rem;
+}
+
+.icon img {
+    height: 1.8rem;
+}
+
+/* MEDIA QUERIES */
+/* Fixes for Large Screens */
+@media only screen and (min-height: 801px) {
+    .container {
+        background-size: cover; 
+    }  
+}
+
+@media only screen and (min-width: 1600px) {
+    main {
+        padding: 0 4%;
+    }
+}
+
+/* Switch to Column Layout (Tablet Portrait Modes)*/
+@media only screen and (max-width:1100px) {
+    .container {
+        height: unset;
+        background-image:url("./images/bg-mobile.svg");
+        background-size: cover;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        align-self: flex-start;
+    }
+
+    main {
+        flex-direction: column;
+        margin-left: unset;
+        align-items: center;
+    }
+
+    .main-graphic {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .main-graphic img {
+        width: 90%;
+    }
+    
+    .main-content {
+        text-align: center;
+        margin-left: unset;
+        width: 80%;
+        margin-top: 3rem;
+    }
+
+    .social {
+        margin-right: unset;
+        margin-top: 3rem;
+    }
+}
+
+/* Resize for Mobile */
+@media only screen and (max-width:720px) {
+    .container {
+        padding: 3rem 2rem;
+        height: 100vh;
+        background-size: contain;
+    }
+
+    .logo {
+        margin-left: 1.25rem;
+    }
+
+    .logo img {
+        height: 36px;
+    }
+
+    main {
+        margin-top: 55px;
+        padding: unset;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 4rem .5rem;
+    }
+
+    h1 {
+        font-size: 26px;
+        line-height: 1.6;
+    }
+
+    button {
+        font-size: 1.4rem;
+        padding: 1.5rem 9rem;
+    }
+
+    .social {
+        margin-top: unset;
+        padding-top: 4rem;
+        padding-bottom: 5rem;
+    }
+
+    .icon:not(:last-of-type) {
+        margin-right: 1.2rem;
+    }
+
+    .icon img {
+        height: 1.4rem;
+    }
+}
