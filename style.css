@@ -78,6 +78,7 @@ h1 {
 button {
     background-color: #fff;
     color: rgb(103, 75, 175);
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.8rem;
     padding: 1.7rem 6.4rem;
     border: none;
